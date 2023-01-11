@@ -1,0 +1,30 @@
+srcs:
+  - third_party/picorv32/picorv32.v
+  - third_party/picorv32/picosoc/spimemio.v
+  - third_party/picorv32/picosoc/simpleuart.v
+  - third_party/picosoc_wrappers/picosoc_wrap.v
+  - third_party/picosoc_wrappers/picosoc_noflash.v
+  - src/picosoc/progmem.v
+top: top
+name: picosoc
+clocks:
+  clk: 10.0
+clock_aliases:
+  clk:
+    - clk_bufg
+    - soc.simpleuart.clk
+vendors:
+  xilinx:
+    - basys3
+    - nexys
+required_toolchains:
+  # FIXME: https://github.com/chipsalliance/fpga-tool-perf/issues/443
+  #- nextpnr-fpga-interchange
+  - vivado
+  - vpr
+  - vpr-fasm2bels
+  - yosys-vivado
+skip_toolchains:
+  - nextpnr-fpga-interchange-already-synth
+  - nextpnr-fpga-interchange-experimental-already-synth
+  - vivado-already-synth
