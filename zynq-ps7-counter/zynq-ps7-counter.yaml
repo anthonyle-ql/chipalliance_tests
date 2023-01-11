@@ -1,0 +1,21 @@
+srcs:
+  - src/zynq-ps7-counter/counter_zynq.v
+top: top
+name: zynq-ps7-counter
+clocks:
+  clk: 12.5
+clock_aliases:
+  clk:
+    - clk_bufg
+vendors:
+  xilinx:
+    - zybo
+required_toolchains:
+  - vivado
+  - yosys-vivado
+  - vpr
+  - vpr-fasm2bels
+skip_toolchains:
+  - nextpnr-fpga-interchange-already-synth
+  - nextpnr-fpga-interchange-experimental-already-synth
+  - vivado-already-synth
