@@ -1,0 +1,27 @@
+srcs:
+  - third_party/vexriscv-verilog/VexRiscv.v
+  - src/vexriscv/vexriscv-verilog_wrap.v
+top: top
+name: vexriscv
+clocks:
+  clk: 10.0
+clock_aliases:
+  clk:
+    - dut.clk
+vendors:
+  xilinx:
+    - arty-a35t
+    - arty-a100t
+    - basys3
+    - zybo
+    - nexys-video
+required_toolchains:
+  - nextpnr-fpga-interchange
+  - vivado
+  - vpr
+  - vpr-fasm2bels
+  - yosys-vivado
+skip_toolchains:
+  - nextpnr-fpga-interchange-already-synth
+  - nextpnr-fpga-interchange-experimental-already-synth
+  - vivado-already-synth
