@@ -1,0 +1,19 @@
+srcs:
+  - src/axi-lite-reg/axi_reg.v
+  - src/axi-lite-reg/AxiPeriph.v
+top: top
+name: axi-lite-reg
+vendors:
+  xilinx:
+    - zybo
+required_toolchains:
+  - vivado
+  - vpr
+skip_toolchains:
+  - nextpnr-fpga-interchange
+  - nextpnr-fpga-interchange-already-synth
+  - nextpnr-fpga-interchange-experimental-already-synth
+  - vivado-already-synth
+  - vpr-fasm2bels
+  - yosys-vivado
+  - yosys-vivado-uhdm
